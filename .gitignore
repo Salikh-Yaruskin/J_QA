@@ -8,6 +8,8 @@ target/
 .idea/jarRepositories.xml
 .idea/compiler.xml
 .idea/libraries/
+.idea/google-java-format.xml
+.idea/uiDesigner.xml
 *.iws
 *.iml
 *.ipr
@@ -36,3 +38,5 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+.idea/

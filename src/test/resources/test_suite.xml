@@ -1,0 +1,32 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.1.dtd" >
+<suite name="suite" parallel="false">
+<!--    <groups>-->
+<!--        <run>-->
+<!--            <include name="firstTest"/>-->
+<!--        </run>-->
+<!--    </groups>-->
+<!--    <test name="test suite">-->
+<!--        <classes>-->
+<!--            <class name="TestNGPractice"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+    <test name="test with params 1">
+        <parameter name="name" value="user"/>
+        <parameter name="password" value="12345"/>
+        <classes>
+            <class name="TestNGPractice"/>
+        </classes>
+    </test>
+    <test name="test 2">
+        <parameter name="name" value="user"/>
+        <parameter name="password" value="12345"/>
+        <classes>
+            <class name="TestNGPractice">
+                <methods>
+                    <include name="login_test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -17,7 +17,7 @@ public class Deanery {
         hall.add(new Students("Sasha", 31, 2, genRaring()));
         hall.add(new Students("Kuzma", 31, 2, genRaring()));
 
-        hall = removeLessThree(hall);
+        removeLessThree(hall);
 
         printStudents(hall, 3);
         printStudents(hall, 4);
@@ -43,19 +43,10 @@ public class Deanery {
     }
 
     // удаляме студентов со средним баллом меньше 3
-    public static ArrayList<Students> removeLessThree(ArrayList<Students> array) {
-        ArrayList<Students> newArray = array
-                .stream()
-                .filter(x -> {
-                    if (x.calculateAverage() >= 3) {
-                        x.setCourse(x.getCourse() + 1);
-                        return true;
-                    }
-                    return false;
-                })
-                .collect(Collectors.toCollection(ArrayList::new));
+    public static void removeLessThree(ArrayList<Students> array) {
+        array.removeIf(x -> x.calculateAverage() < 3);
 
-        return newArray;
+        array.forEach(students -> students.setCourse(students.getCourse() + 1));
     }
 
     public static void printStudents(ArrayList<Students> students, int course) {

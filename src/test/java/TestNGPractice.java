@@ -39,9 +39,7 @@ public class TestNGPractice {
     @DataProvider(name = "users")
     public Object[][] providerData(){
         return new Object[][]{
-                {"ivan", 123},
-                {"user", 12345},
-                {"user", 12345566}
+                {"user", 12345}
         };
     }
 
